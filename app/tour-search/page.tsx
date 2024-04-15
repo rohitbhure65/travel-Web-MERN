@@ -1,16 +1,18 @@
 "use client"
+import React from 'react'
 import Navbar from "@/Components/Navbar";
 import Hero from "@/Components/Hero";
 import Footer  from "@/Components/Footer";
-import PopularTour from "@/Components/PopularTour";
 
-export default function Home() {
+
+const page = () => {
   return (
     <>
     <Navbar/>
     <Hero/>
-    <PopularTour/>
     <Footer/>
     </>
-  );
+  )
 }
+
+export default page
