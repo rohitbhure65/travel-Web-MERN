@@ -11,11 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import Image from 'next/image';
 import logo from "@/public/logo-v3.png"
-const pages = ['Home', 'About', 'Contact'];
-const settings = ['Home'];
+
+const settings = ['Home','register','login','logout'];
+const url = ['/', '/auth/register','/auth/login','/api/users/logout']
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -71,23 +71,11 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' }
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black  ', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -112,11 +100,21 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                    {url.map((urls) => (
+                  <Button href={urls}>{settings}</Button>
+                    ))}
                 </MenuItem>
-              ))}
+              ))} */}
+                  <MenuItem sx={{display: 'flex', flexDirection: 'column'}} onClick={handleCloseUserMenu}>
+            
+                  <Button href='/'>Home</Button>
+                  <Button href='/auth/register'>Register</Button>
+                  <Button href='/auth/login'>Login</Button>
+                  <Button href='/api/users/logout'>Logout</Button>
+                   
+                </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
