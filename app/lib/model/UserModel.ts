@@ -20,24 +20,8 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a password"],
     },
-    gender: {
-        type: String,
-        enum:["Male", "Female", "Other"]
-    },
-    city:{
-        type: String,
-        required: [true, "Please provide a city"]
-    },
-    profileImg: {
-        type: String,
-        default: ""
-    },
-    isVerified:{
-        type: Boolean,
-        // default: false, 
-        default: true
-        //uncommet when you add SMTP email verification             
-    },
+    verifyToken: String,
+    verifyTokenExpiry: Date,
 }, { timestamps: true });
 
 UserSchema.pre('save', async function (next) {

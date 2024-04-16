@@ -16,6 +16,7 @@ if (!cached) {
 
 const dbConnect = async () => {
     if (cached.conn) {
+        console.log("mongo connected")
         return cached.conn;
     }
 

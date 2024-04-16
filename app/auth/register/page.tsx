@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
-import styles from "@/styles/Register.module.scss";
+import styles from "@/app/styles/Register.module.scss";
 import CircularProgress from "@mui/material/CircularProgress";
 import Link from "next/link";
 import { Form } from "rsuite";
@@ -14,10 +14,7 @@ const Register = () => {
     name: "",
     email: "",
     phone: "",
-    password: "",
-    role: "",
-    city: "",
-    profileImg: "",
+    password: ""
   });
 
   const [buttonDisabled, setButtonDisabled] = useState(false);
@@ -96,36 +93,8 @@ const Register = () => {
             placeholder="Enter password"
             required
           />
-          <input
-            type="text"
-            name="role"
-            id="role"
-            className={styles.input}
-            value={user.role}
-            onChange={(e) => setUser({ ...user, role: e.target.value })}
-            placeholder="agent / builder / User"
-            required
-          />
-          <input
-            type="text"
-            name="city"
-            id="city"
-            className={styles.input}
-            value={user.city}
-            onChange={(e) => setUser({ ...user, city: e.target.value })}
-            placeholder="Enter your city"
-            required
-          />
-          <input
-            type="file"
-            name="profileImg"
-            id="profileImg"
-            className={styles.input}
-            value={user.profileImg}
-            onChange={(e) => setUser({ ...user, profileImg: e.target.value })}
-            placeholder="upload profile image"
-          ></input>
           <p className={styles.page_link}>
+            {/* <span className={styles.page_label}>Forgot Password?</span> */}
           </p>
           <button onClick={onSignup} className={styles.form_btn}>
             {buttonDisabled ? "No signup" : "Sign up"}

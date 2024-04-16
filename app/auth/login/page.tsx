@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { toast } from "react-hot-toast";
-import styles from "@/styles/Register.module.scss";
+import styles from "@/app/styles/Register.module.scss";
 import CircularProgress from "@mui/material/CircularProgress";
 import Link from "next/link";
 import {Alert} from '@mui/material';
