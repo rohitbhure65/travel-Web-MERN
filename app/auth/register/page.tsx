@@ -7,6 +7,8 @@ import styles from "@/app/styles/Register.module.scss";
 import CircularProgress from "@mui/material/CircularProgress";
 import Link from "next/link";
 import { Form } from "rsuite";
+import Navbar from "@/Components/Navbar"
+import Footer from "@/Components/Footer"
 
 const Register = () => {
   const router = useRouter();
@@ -47,6 +49,8 @@ const Register = () => {
   }, [user]);
 
   return (
+    <>
+    <Navbar/>
     <div className={styles.signup_form}>
       <div className={styles.form_container}>
         <p className={styles.title}>
@@ -108,6 +112,8 @@ const Register = () => {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

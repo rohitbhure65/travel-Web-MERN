@@ -7,6 +7,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Link from "next/link";
 import {Alert} from '@mui/material';
 import { Form } from "rsuite";
+import Navbar from "@/Components/Navbar"
+import Footer from "@/Components/Footer"
 
 const Login = () => {
   const router = useRouter();
@@ -41,6 +43,8 @@ const Login = () => {
   }, [user]);
 
   return (
+    <>
+    <Navbar/>
     <div className={styles.signup_form}>
       <div className={styles.form_container}>
         <p className={styles.title}>
@@ -82,6 +86,8 @@ const Login = () => {
         </p>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
