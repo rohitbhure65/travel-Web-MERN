@@ -7,10 +7,12 @@ import Typography from '@mui/material/Typography';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import AvTimerIcon from '@mui/icons-material/AvTimer';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import Link from 'next/link';
 
 export default function MultiActionAreaCard(props:any) {
   const { title,description,image,duration,price} = props.data
   return (
+    <Link href="/tourlist">
     <Card sx={{ maxWidth: 345,margin: '1rem'}}>
       <CardActionArea>
         <CardMedia
@@ -37,5 +39,6 @@ export default function MultiActionAreaCard(props:any) {
         </Button>        
       </CardActions>
     </Card>
+    </Link>
   );
 }

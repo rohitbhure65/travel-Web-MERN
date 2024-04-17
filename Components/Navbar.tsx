@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Image from 'next/image';
 import logo from "@/public/logo-v3.png"
+import Link from 'next/link';
 
 const settings = ['Home','register','login','logout'];
 const url = ['/', '/auth/register','/auth/login','/api/users/logout']
@@ -41,8 +42,17 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <Image src={logo} width={150} height={300} alt='logo'></Image>
+          <Box component="div"
+          sx={{color: 'black',
+            paddingLeft: '2rem',
+
+          }}>
+          <Button sx={{marginRight: '1rem'}} variant='contained' href="/">Home</Button>
+          <Button variant='contained' href="/tour-search">Tour Search</Button>
+          </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+ 
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -75,7 +85,6 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
